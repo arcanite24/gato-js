@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/toastr.min.css">
+  <link rel="stylesheet" href="css/master.css">
+  <title>GatoJS</title>
+  <!-- Quitas esto manco. By Neri -->
+</head>
+<body>
+  <div class="main-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" id="final-message-win" hidden>
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              ¡Ganaste!
+            </div>
+            <div class="panel-body">
+              <h1 style="color: rgba(0, 0, 0, 0.87)">¡Ganaste!</h1>
+              <button class="btn btn-primary button-reset">Volver a jugar</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" id="final-message-lose" hidden>
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              ¡Perdiste!
+            </div>
+            <div class="panel-body">
+              <h1 style="color: rgba(0, 0, 0, 0.87)">¡Perdiste!</h1>
+              <button class="btn btn-primary button-reset">Volver a jugar</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 text-center">
+          <h1 class="md54 animated fadeInDown">GatoJS</h1>
+        </div>
+        <!-- Login Panel -->
+        <div class="col-md-12 animated fadeInUp" id="login-panel">
+          <div class="panel panel-default">
+            <div class="panel-heading">Sala</div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label>Ingresa la sala:</label>
+                  <input type="text" class="form-control" id="input-room">
+                </div>
+                <div class="col-md-12">
+                  <button class="btn btn-primary" id="button-join">Unirse</button>
+                  <button class="btn btn-primary" id="button-new">Nueva Partida</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Game Panel -->
+        <div class="col-md-8 animated" id="game-panel" hidden>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Gato</div>
+            <div class="panel-body">
+              <div class="gato-container">
+                <table id="gato">
+                  <tbody>
+                    <tr>
+                      <td id="cell-1" class="cell"></td>
+                      <td id="cell-2" class="cell"></td>
+                      <td id="cell-3" class="cell"></td>
+                    </tr>
+                    <tr>
+                      <td id="cell-4" class="cell"></td>
+                      <td id="cell-5" class="cell"></td>
+                      <td id="cell-6" class="cell"></td>
+                    </tr>
+                    <tr>
+                      <td id="cell-7" class="cell"></td>
+                      <td id="cell-8" class="cell"></td>
+                      <td id="cell-9" class="cell"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Info Panel -->
+        <div class="col-md-4 animated" id="info-panel" hidden>
+          <div class="panel panel-primary">
+            <div class="panel-heading">Info</div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <ul>
+                    <li><strong>Sala: </strong> <span id="info-room">Cargando...</span></li>
+                    <li><strong>Jugadores: </strong> <span id="info-players">Cargando...</span></li>
+                    <li><strong>Turno: </strong> <span id="info-turno">Cargando...</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/socket.io.js" charset="utf-8"></script>
+  <script src="js/jq.js" charset="utf-8"></script>
+  <script src="js/toastr.min.js" charset="utf-8"></script>
+  <script src="js/gato.js" charset="utf-8"></script>
+</body>
+</html>
